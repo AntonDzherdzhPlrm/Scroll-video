@@ -48,7 +48,7 @@ const ScrollComponent = () => {
       setInterval(() => {
         delay += (scrollpos - delay) * accelamount;
         videoRef.current.currentTime = delay;
-      }, 60);
+      }, 65);
     }
   };
 
