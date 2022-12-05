@@ -9,6 +9,9 @@ const ScrollComponent = () => {
   const introRef = useRef(null);
   const videoRef = useRef(null);
   const textRef = useRef(null);
+  const bgRef = useRef(null);
+  const sectionRef = useRef(null);
+  const textSectionRef = useRef(null);
 
   const load = async () => {
     if (typeof window !== undefined) {
@@ -16,7 +19,7 @@ const ScrollComponent = () => {
       const controller = new ScrollMagic.Controller();
 
       let scene = new ScrollMagic.Scene({
-        duration: 57000,
+        duration: 6000,
         triggerElement: introRef.current,
         triggerHook: 0,
       })
@@ -29,15 +32,41 @@ const ScrollComponent = () => {
         { opacity: 0, fontSize: "20px" }
       );
 
+      const bgAnim = gsap.fromTo(bgRef.current, { opacity: 0 }, { opacity: 1 });
+
+      const textSectionAnim = gsap.fromTo(
+        textSectionRef.current,
+        { opacity: 0, fontSize: "20px" },
+        { opacity: 1, fontSize: "80px" }
+      );
+
       new ScrollMagic.Scene({
-        duration: 8000,
+        duration: 4000,
         triggerElement: introRef.current,
         triggerHook: 0,
       })
         .setTween(textAnim)
         .addTo(controller);
 
-      let accelamount = 0.2;
+      new ScrollMagic.Scene({
+        duration: 3000,
+        offset: 4000,
+        triggerElement: introRef.current,
+        triggerHook: 0.5,
+      })
+        .setTween(bgAnim)
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        duration: 1000,
+        offset: 6000,
+        triggerElement: introRef.current,
+        triggerHook: 0,
+      })
+        .setTween(textSectionAnim)
+        .addTo(controller);
+
+      let accelamount = 0.3;
       let scrollpos = 0;
       let delay = 0;
 
@@ -48,7 +77,7 @@ const ScrollComponent = () => {
       setInterval(() => {
         delay += (scrollpos - delay) * accelamount;
         videoRef.current.currentTime = delay;
-      }, 65);
+      }, 200);
     }
   };
 
@@ -58,10 +87,14 @@ const ScrollComponent = () => {
 
   return (
     <div ref={introRef} className={styles.intro}>
-      <h1 ref={textRef}>Some text</h1>
-      <video ref={videoRef} src="/TOP.mp4" />
-      <section className={styles.section}>
-        <h1>Section</h1>
+      <div className={styles.videoContainer}>
+        <div ref={bgRef} className={styles.bgContainer} />
+        <h1 ref={textRef}>Some text</h1>
+        <video ref={videoRef} src="/video1.mp4" />
+      </div>
+
+      <section ref={sectionRef} className={styles.section}>
+        <h1 ref={textSectionRef}>Section</h1>
       </section>
     </div>
   );
