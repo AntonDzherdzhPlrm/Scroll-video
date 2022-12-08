@@ -1,0 +1,51 @@
+.container {
+  height: 100%;
+  /* overflow: hidden; */
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sectionContainer1,
+.sectionContainer2,
+.sectionContainer3,
+.sectionContainer4,
+.sectionContainer5 {
+  position: relative;
+  text-align: center;
+  min-height: 500px;
+  max-height: 1000px;
+  height: 80%;
+}
+
+.sectionContainer1 {
+  background: #81234e;
+}
+
+.sectionContainer2 {
+  background: #df5252;
+}
+
+.sectionContainer3 {
+  background: #ff9a56;
+}
+
+.sectionContainer4 {
+  background: #371465;
+}
+
+.sectionContainer5 {
+  background: #456987;
+}
+
+.title {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  font-size: 80px;
+  letter-spacing: 5px;
+  color: #fff;
+  text-transform: uppercase;
+}
