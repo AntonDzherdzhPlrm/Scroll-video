@@ -30,3 +30,33 @@
 .infiniteScrollLoopInner::-webkit-scrollbar {
   display: none;
 }
+
+.one,
+.two,
+.three {
+  width: 100%;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.scrollContainer {
+  /* 	height: 750px; */
+  max-height: 99vh;
+  width: 400px;
+  overflow: scroll;
+  background: #fff;
+  padding: 20px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}

@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback, useLayoutEffect } from "react";
 import {
+  // ScrollComponent,
   Component1,
   Component2,
   Component3,
@@ -10,7 +11,7 @@ import styles from "../styles/SLoop.module.css";
 
 const useBrowserLayoutEffect = process.browser ? useLayoutEffect : () => {};
 
-const SLoop = () => {
+const Scroll1 = () => {
   return (
     <div className={styles.container}>
       <InfiniteScrollLoop>
@@ -80,4 +81,4 @@ const InfiniteScrollLoop = ({
   );
 };
 
-export default SLoop;
+export default Scroll1;
