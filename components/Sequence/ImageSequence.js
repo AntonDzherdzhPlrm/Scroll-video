@@ -13,7 +13,7 @@ const ImageSequence = forwardRef(({ progress }, ref) => {
     } else {
       return (
         <>
-          <div style={{ display: "none" }}>
+          {/* <div style={{ display: "none" }}>
             {newImages[index + 1] && newImages[index + 1][0] ? (
               <Image
                 alt="Picture"
@@ -24,7 +24,7 @@ const ImageSequence = forwardRef(({ progress }, ref) => {
                 src={newImages[index + 1][0].src}
               />
             ) : null}
-          </div>
+          </div> */}
           <Image
             alt="Picture"
             objectFit="cover"
