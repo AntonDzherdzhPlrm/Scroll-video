@@ -7,35 +7,35 @@ export const useImage = (url, crossOrigin) => {
   const image = resimage.image;
   const status = resimage.status;
 
-  // useEffect(() => {
-  //   if (!url) return;
-
-  //   setResImage({ image: url, status: "loaded" });
-  // }, [url]);
-
   useEffect(() => {
-    if (!url && !document) return;
-    const img = document.createElement("img");
+    if (!url) return;
 
-    function onload() {
-      setResImage({ image: img, status: "loaded" });
-    }
+    setResImage({ image: url, status: "loaded" });
+  }, [url]);
 
-    function onerror() {
-      setResImage({ image: undefined, status: "failed" });
-    }
+  // useEffect(() => {
+  //   if (!url && !document) return;
+  //   const img = document.createElement("img");
 
-    img.addEventListener("load", onload);
-    img.addEventListener("error", onerror);
-    crossOrigin && (img.crossOrigin = crossOrigin);
-    img.src = url.src;
+  //   function onload() {
+  //     setResImage({ image: img, status: "loaded" });
+  //   }
 
-    return () => {
-      img.removeEventListener("load", onload);
-      img.removeEventListener("error", onerror);
-      setResImage(defaultState);
-    };
-  }, [url, crossOrigin]);
+  //   function onerror() {
+  //     setResImage({ image: undefined, status: "failed" });
+  //   }
+
+  //   img.addEventListener("load", onload);
+  //   img.addEventListener("error", onerror);
+  //   crossOrigin && (img.crossOrigin = crossOrigin);
+  //   img.src = url.src;
+
+  //   return () => {
+  //     img.removeEventListener("load", onload);
+  //     img.removeEventListener("error", onerror);
+  //     setResImage(defaultState);
+  //   };
+  // }, [url, crossOrigin]);
 
   // return array because it it better to use in case of several useImage hooks
   // const [background, backgroundStatus] = useImage(url1);
