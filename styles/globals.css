@@ -6,10 +6,11 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overscroll-behavior: none;
   -ms-scroll-chaining: none;
+  height:100%;
 }
 
 body {
-  /* overflow: hidden; */
+  width:100%;
 }
 
 a {

@@ -6,6 +6,8 @@ import {
   Component3,
   Component4,
   Component5,
+  Sequence,
+  SequenceCanvas,
 } from "../components";
 import styles from "../styles/SLoop.module.css";
 
@@ -16,6 +18,10 @@ const Scroll1 = () => {
     <div className={styles.container}>
       <InfiniteScrollLoop>
         {/* <ScrollComponent /> */}
+        {/* <div>
+          <Sequence />
+        </div> */}
+        {/* <SequenceCanvas /> */}
         <Component1 />
         <Component2 />
         <Component3 />

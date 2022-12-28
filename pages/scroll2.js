@@ -5,6 +5,8 @@ import {
   Component3,
   Component4,
   Component5,
+  Sequence,
+  SequenceCanvas
 } from "../components";
 import styles from "../styles/Scroll2.module.css";
 
@@ -51,6 +53,8 @@ const IfinteInner = ({ list, updateList }) => {
 const Scroll2 = () => {
   return (
     <InfiniteScrollLoop className={styles.mainContainer}>
+      {/* <Sequence /> */}
+      {/* <SequenceCanvas /> */}
       <Component1 />
       <Component2 />
       <Component3 />

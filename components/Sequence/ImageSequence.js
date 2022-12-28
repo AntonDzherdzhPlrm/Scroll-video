@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import { forwardRef } from "react";
 import { Skeleton } from "./Skeleton";
 import ImageArray from "./FrogArray";

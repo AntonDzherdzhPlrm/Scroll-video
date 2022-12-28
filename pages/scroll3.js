@@ -6,7 +6,8 @@ import {
   Component3,
   Component4,
   Component5,
-  Sequence
+  Sequence,
+  SequenceCanvas
 } from "../components";
 import styles from "../styles/Scroll3.module.css";
 
@@ -73,6 +74,7 @@ const Scroll3 = () => {
           // ref={scrollEllementRef}
         >
           {/* <Sequence /> */}
+          {/* <SequenceCanvas/> */}
           <Component1 />
           <Component2 />
           <Component3 />
