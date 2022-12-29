@@ -7,6 +7,7 @@ import {
   Component4,
   Component5,
   SequenceCanvas,
+  SequenceFrog
 } from "../components";
 
 import styles from "../styles/Scroll4.module.css";
@@ -33,10 +34,11 @@ const Scroll4 = () => {
 
   return (
     <div className={styles.container} ref={rootRef}>
-      <SequenceCanvas />
+      <SequenceCanvas/>
       <Component1 />
       <Component2 />
       <Component3 />
+      <SequenceFrog />
       <Component4 />
       <Component5 />
     </div>

@@ -4,18 +4,18 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import styles from "./SequenceCanvas.module.css";
 
 const SequenceCanvas = () => {
-  const canvasRef = useRef(null);
+  const canvasAirpodsRef = useRef(null);
 
   useEffect(() => {
     const { ScrollTrigger } = require("gsap/ScrollTrigger");
     gsap.registerPlugin(ScrollTrigger);
-    const context = canvasRef.current.getContext("2d");
+    const context = canvasAirpodsRef.current.getContext("2d");
 
-    canvasRef.current.width = 1158;
-    canvasRef.current.height = 770;
+    canvasAirpodsRef.current.width = 1158;
+    canvasAirpodsRef.current.height = 770;
 
     const frameCount = 147;
-    const offset_value = 100;
+    const offset_value = 30;
     const currentFrame = (index) =>
       `https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/${(
         index + 1
@@ -53,8 +53,8 @@ const SequenceCanvas = () => {
       context.clearRect(
         0,
         0,
-        canvasRef.current.width,
-        canvasRef.current.height
+        canvasAirpodsRef.current.width,
+        canvasAirpodsRef.current.height
       );
       context.drawImage(images[airpods.frame], 0, 0);
     }
@@ -62,7 +62,7 @@ const SequenceCanvas = () => {
 
   return (
     <div className={styles.main} id="main">
-      <canvas className={styles.canvas} id="hero-lightpass" ref={canvasRef} />
+      <canvas className={styles.canvas} id="airpods" ref={canvasAirpodsRef} />
     </div>
   );
 };
