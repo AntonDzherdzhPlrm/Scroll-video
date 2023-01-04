@@ -1,4 +1,13 @@
 .container {
   background-color: #000;
   height: 100%;
+  overflow: auto;
+}
+
+.imgContainer {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

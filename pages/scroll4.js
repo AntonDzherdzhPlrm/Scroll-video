@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import {
   Component1,
@@ -7,7 +8,8 @@ import {
   Component4,
   Component5,
   SequenceCanvas,
-  SequenceFrog
+  SequenceFrog,
+  HorizontalScroll,
 } from "../components";
 
 import styles from "../styles/Scroll4.module.css";
@@ -34,13 +36,22 @@ const Scroll4 = () => {
 
   return (
     <div className={styles.container} ref={rootRef}>
-      <SequenceCanvas/>
+      <SequenceCanvas />
       <Component1 />
       <Component2 />
+      <HorizontalScroll />
       <Component3 />
       <SequenceFrog />
       <Component4 />
       <Component5 />
+      <div className={styles.imgContainer}>
+        <Image
+          src="https://www.apple.com/105/media/us/airpods-pro/2019/1299e2f5_9206_4470_b28e_08307a42f19b/anim/sequence/large/01-hero-lightpass/0001.jpg"
+          alt="phones"
+          width={1158}
+          height={770}
+        />
+      </div>
     </div>
   );
 };

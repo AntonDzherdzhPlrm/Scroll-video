@@ -3,7 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['localhost'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'www.apple.com',
+      },
+    ],
+    domains: ['localhost', 'www.apple.com'],
   },
 }
 
